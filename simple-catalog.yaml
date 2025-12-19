@@ -15,10 +15,11 @@ spec:
     branch: main
     monoRepo: false
     url: https://github.com/ShashankDwivedi/idp-samples/tree/main
+  providesApis:
+  - api:account.default.default_project/paymentgatewayapi
   dependsOn:
   - component:account.default.default_project/orderservice
   - resource:account.default.default_project/paymentdb
-  - api:account.default.default_project/paymentgatewayapi
 metadata:
   description: test
   tags:
