@@ -1,0 +1,18 @@
+apiVersion: harness.io/v1
+kind: System
+type: system
+identifier: paymentsystem
+name: payment-system
+owner: group:account/_account_all_users
+orgIdentifier: default
+projectIdentifier: default_project
+spec:
+  lifecycle: ''
+metadata:
+  description: This system provides details of all the components, resources, apis
+    that completes the system.
+  tags:
+  - Java
+  - OpenAPI
+  - Postgres
+  - Harness
