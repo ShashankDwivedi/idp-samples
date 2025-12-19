@@ -16,7 +16,7 @@ spec:
     monoRepo: false
     url: https://github.com/ShashankDwivedi/idp-samples/tree/main
   dependsOn:
-  - component:default_pproject/orderservice
+  - component:account.default.default_project/orderservice
 metadata:
   description: test
   tags:
