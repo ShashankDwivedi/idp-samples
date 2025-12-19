@@ -17,6 +17,7 @@ spec:
     url: https://github.com/ShashankDwivedi/idp-samples/tree/main
   dependsOn:
   - component:account.default.default_project/orderservice
+  - resource:account.default.default_project/paymentdb
 metadata:
   description: test
   tags:
