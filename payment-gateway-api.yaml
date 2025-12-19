@@ -16,6 +16,8 @@ spec:
     monoRepo: false
     url: https://github.com/ShashankDwivedi/idp-samples/tree/main
   definition: https://example.com/openapi/payment-gateway.yaml
+  system:
+  - system:account.default.default_project/paymentsystem
 metadata:
   description: Payment API is based on OpenAPI type
   tags:
