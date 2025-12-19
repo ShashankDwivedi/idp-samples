@@ -1,0 +1,21 @@
+apiVersion: harness.io/v1
+kind: Resource
+type: database
+identifier: paymentdb
+name: payment-db
+owner: group:account/_account_all_users
+orgIdentifier: default
+projectIdentifier: default_project
+spec:
+  lifecycle: staging
+  sourceCode:
+    provider: Github
+    repoName: idp-samples
+    connectorRef: account.shashankgithubconnector
+    branch: main
+    monoRepo: false
+    url: https://github.com/ShashankDwivedi/idp-samples/tree/main
+metadata:
+  description: this is a postgres db that is used to store transaction information
+  tags:
+  - postgres
