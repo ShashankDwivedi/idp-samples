@@ -2,7 +2,7 @@ apiVersion: harness.io/v1
 kind: Component
 type: service
 identifier: simplecomponent
-name: simple-component
+name: payment-service
 owner: group:account/_account_all_users
 orgIdentifier: default
 projectIdentifier: default_project
@@ -15,6 +15,10 @@ spec:
     branch: main
     monoRepo: false
     url: https://github.com/ShashankDwivedi/idp-samples/tree/main
+  dependsOn:
+  - resource:default/payment-database
+  - component:default/order-service
+  - api:default/payment-gateway-api
 metadata:
   description: test
   tags:
