@@ -17,6 +17,8 @@ spec:
     url: https://github.com/ShashankDwivedi/idp-samples/tree/main
   providesApis:
   - api:account.default.default_project/paymentgatewayapi
+  system:
+  - system:account.default.default_project/paymentsystem
   dependsOn:
   - component:account.default.default_project/orderservice
   - resource:account.default.default_project/paymentdb
