@@ -16,9 +16,7 @@ spec:
     monoRepo: false
     url: https://github.com/ShashankDwivedi/idp-samples/tree/main
   dependsOn:
-  - resource:default/payment-database
   - component:default/order-service
-  - api:default/payment-gateway-api
 metadata:
   description: test
   tags:
