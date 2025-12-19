@@ -1,0 +1,23 @@
+apiVersion: harness.io/v1
+kind: Component
+type: service
+identifier: orderservice
+name: order-service
+owner: group:account/_account_all_users
+orgIdentifier: default
+projectIdentifier: default_project
+spec:
+  lifecycle: staging
+  sourceCode:
+    provider: Github
+    repoName: idp-samples
+    connectorRef: account.shashankgithubconnector
+    branch: main
+    monoRepo: false
+    url: https://github.com/ShashankDwivedi/idp-samples/tree/main
+metadata:
+  description: This services is responsible for taking orders
+  tags:
+  - Java
+  - rest
+  - react
