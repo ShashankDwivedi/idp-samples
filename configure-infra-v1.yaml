@@ -11,28 +11,50 @@ spec:
       url: ${{ steps.trigger.output.PipelineUrl }}
   lifecycle: staging
   parameters:
-  - title: Service Details
+  - title: Configure Infrastructure For Dev Teams
     required:
-    - service_name
+    - env_name
+    - cloud_type
     properties:
       token:
         title: Harness Token
         type: string
         ui:widget: password
         ui:field: HarnessAuthToken
-      service_name:
-        title: Service Name
+      env_name:
+        title: Environment Name
         type: string
-        description: Mention the project name
+        description: Select the target Environment
+        enum:
+        - dev
+        - qa
+        - staging
+        - prod
+        enumNames:
+        - Development
+        - Quality
+        - Staging
+        - Production
+      cloud_type:
+        title: Cloud Provider
+        type: string
+        description: Select the target Cloud Provider
+        enum:
+        - AWS
+        - Azure
+        enumNames:
+        - Amazon Web Services
+        - Azure Cloud Services
   steps:
   - id: trigger
-    name: Creating your appication
+    name: Configuring your Infrastructure
     action: trigger:harness-custom-pipeline
     input:
       url:
       - Harness Pipeline URL
       inputset:
-        service_name: ${{ parameters.service_name }}
+        env_name: ${{ parameters.env_name }}
+        cloud_type: ${{ parameters.cloud_type}}
       apikey: ${{ parameters.token }}
 metadata:
   description: the purpose of this workflow is to set up Infra for Onboarding Users
