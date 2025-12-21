@@ -10,9 +10,9 @@ spec:
     - title: Pipeline Details
       url: ${{ steps.trigger.output.PipelineUrl }}
   parameters:
-  - title: Service Details
+  - title: Configure Infrastructure V1
     required:
-    - service_name
+    - env_name
     properties:
       token:
         title: Harness Token
@@ -20,9 +20,14 @@ spec:
         ui:widget: password
         ui:field: HarnessAuthToken
       service_name:
-        title: Service Name
+        title: env_name
         type: string
         description: Mention the project name
+        enum:
+        - Dev
+        - QA
+        - Staging
+        - Prod
   steps:
   - id: trigger
     name: Creating your appication
