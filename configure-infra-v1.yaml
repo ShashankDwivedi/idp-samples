@@ -28,6 +28,11 @@ spec:
         - QA
         - Staging
         - Prod
+        enumNames:
+        - Development
+        - Quality
+        - Staging
+        - Production
   steps:
   - id: trigger
     name: Creating your appication
