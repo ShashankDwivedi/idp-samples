@@ -12,15 +12,15 @@ spec:
   parameters:
   - title: Configure Infrastructure V1
     required:
-    - env_name
+    - env_type
     properties:
       token:
         title: Harness Token
         type: string
         ui:widget: password
         ui:field: HarnessAuthToken
-      service_name:
-        title: env_name
+      env_type:
+        title: Environment Type
         type: string
         description: Mention the project name
         enum:
@@ -41,5 +41,5 @@ spec:
       url:
       - Harness Pipeline URL
       inputset:
-        service_name: ${{ parameters.service_name }}
+        env_type: ${{ parameters.env_type }}
       apikey: ${{ parameters.token }}
