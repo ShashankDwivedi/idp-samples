@@ -55,7 +55,7 @@ spec:
         cloud_type: ${{ parameters.cloud_type }}
       apikey: ${{ parameters.token }}
   - id: trigger_prod_environment
-    name: Configure_non_prod_environment
+    name: Configure_prod_environment
     if: ${{ parameters.env_type === "Prod"}}
     action: trigger:harness-custom-pipeline
     input:
