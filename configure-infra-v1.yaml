@@ -49,8 +49,7 @@ spec:
       parameters.env_type === "Staging"}}
     action: trigger:harness-custom-pipeline
     input:
-      url:
-      - https://app.harness.io/ng/account/SxuV0ChbRqWGSYClFlMQMQ/all/orgs/default/projects/default_project/pipelines/configureinfrastructurenonProd/pipeline-studio/?storeType=INLINE
+      url: https://app.harness.io/ng/account/SxuV0ChbRqWGSYClFlMQMQ/all/orgs/default/projects/default_project/pipelines/configureinfrastructurenonProd/pipeline-studio/?storeType=INLINE
       inputset:
         env_type: ${{ parameters.env_type }}
         cloud_type: ${{ parameters.cloud_type }}
@@ -60,8 +59,7 @@ spec:
     if: ${{ parameters.env_type === "Prod"}}
     action: trigger:harness-custom-pipeline
     input:
-      url:
-      - https://app.harness.io/ng/account/SxuV0ChbRqWGSYClFlMQMQ/all/orgs/default/projects/default_project/pipelines/configure_prod_infra/pipeline-studio/?storeType=INLINE
+      url: https://app.harness.io/ng/account/SxuV0ChbRqWGSYClFlMQMQ/all/orgs/default/projects/default_project/pipelines/configure_prod_infra/pipeline-studio/?storeType=INLINE
       inputset:
         env_type: ${{ parameters.env_type }}
         cloud_type: ${{ parameters.cloud_type }}
