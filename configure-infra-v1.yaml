@@ -54,6 +54,7 @@ spec:
                 - s3
               uniqueItems: true
               minItems: 1
+              ui:widget: checkboxes
           required:
           - service
         - properties:
