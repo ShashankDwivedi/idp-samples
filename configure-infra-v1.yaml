@@ -78,7 +78,7 @@ spec:
   steps:
   - id: trigger_nonprod_environment
     name: Configure_non_prod_environment
-    if: ${{ parameters.env_type === "Dev" or { parameters.env_type === "QA" or  parameters.env_type
+    if: ${{ parameters.env_type === "Dev" or parameters.env_type === "QA" or  parameters.env_type
       === "Staging" }}
     action: trigger:harness-custom-pipeline
     input:
