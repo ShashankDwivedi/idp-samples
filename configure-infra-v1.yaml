@@ -41,7 +41,33 @@ spec:
         enum:
         - AWS
         - Azure
-        - GCP
+    dependencies:
+      cloud_type:
+        Oneof:
+        - properties:
+            cloud_type:
+              const: AWS
+            service:
+              title: AWS Service
+              type: string
+              enum:
+              - ec2
+              - eks
+              - s3
+          required:
+          - service
+        - properties:
+            cloud_type:
+              const: Azure
+            service:
+              title: Azure Service
+              type: string
+              enum:
+              - vm
+              - aks
+              - blob
+          required:
+          - service
   steps:
   - id: trigger_nonprod_environment
     name: Configure_non_prod_environment
