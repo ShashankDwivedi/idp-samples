@@ -78,8 +78,8 @@ spec:
   steps:
   - id: trigger_nonprod_environment
     name: Configure_non_prod_environment
-    if: ${{ parameters.env_type === "Dev"} or { parameters.env_type === "QA"} or {
-      parameters.env_type === "Staging"}}
+    if: ${{ parameters.env_type === "Dev" or { parameters.env_type === "QA" or  parameters.env_type
+      === "Staging" }}
     action: trigger:harness-custom-pipeline
     input:
       url: https://app.harness.io/ng/account/SxuV0ChbRqWGSYClFlMQMQ/all/orgs/default/projects/default_project/pipelines/configureinfrastructurenonProd/pipeline-studio/?storeType=INLINE
