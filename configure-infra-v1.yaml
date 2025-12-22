@@ -29,11 +29,6 @@ spec:
         - QA
         - Staging
         - Prod
-        enumNames:
-        - Development
-        - Quality
-        - Staging
-        - Production
       cloud_type:
         title: Cloud Provider
         type: string
