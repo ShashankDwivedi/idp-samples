@@ -70,9 +70,9 @@ spec:
                 - vm
                 - aks
                 - blob
-                uniqueItem: true
-                minItems: 1
-                ui:widget: checkboxes
+              uniqueItem: true
+              minItems: 1
+              ui:widget: checkboxes
           required:
           - service
   steps:
