@@ -27,6 +27,6 @@ metadata:
   annotations:
     harness.io/pipelines: |
       CD: https://app.harness.io/ng/account/SxuV0ChbRqWGSYClFlMQMQ/all/orgs/default/projects/default_project/pipelines/configure_prod_infra/pipeline-studio/?storeType=INLINE
-    backstage.io/techdocs-ref: https://github.com/shashanksandbox/idp-samples/blob/main/README.md
+    backstage.io/techdocs-ref: url:https://github.com/ShashankDwivedi/idp-samples/blob/main/README.md
   tags:
   - v1
