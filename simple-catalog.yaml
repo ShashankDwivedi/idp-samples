@@ -24,5 +24,8 @@ spec:
   - resource:account.default.default_project/paymentdb
 metadata:
   description: test
+  annotations:
+    harness.io/pipelines: |
+      CD: https://app.harness.io/ng/account/SxuV0ChbRqWGSYClFlMQMQ/all/orgs/default/projects/default_project/pipelines/configure_prod_infra/pipeline-studio/?storeType=INLINE
   tags:
   - v1
