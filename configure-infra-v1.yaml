@@ -44,7 +44,7 @@ spec:
               const: AWS
             service:
               title: AWS Service
-              type: string
+              type: array
               enum:
               - ec2
               - eks
@@ -56,7 +56,7 @@ spec:
               const: Azure
             service:
               title: Azure Service
-              type: string
+              type: array
               enum:
               - vm
               - aks
