@@ -38,7 +38,7 @@ spec:
         - Azure
     dependencies:
       cloud_type:
-        Oneof:
+        oneOf:
         - properties:
             cloud_type:
               const: AWS
