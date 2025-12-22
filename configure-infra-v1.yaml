@@ -70,7 +70,7 @@ spec:
                 - vm
                 - aks
                 - blob
-              uniqueItem: true
+              uniqueItems: true
               minItems: 1
               ui:widget: checkboxes
           required:
