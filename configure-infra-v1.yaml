@@ -43,12 +43,25 @@ spec:
         - Azure
         - GCP
   steps:
-  - id: trigger
-    name: Creating your appication
+  - id: trigger_nonprod_environment
+    name: Configure_non_prod_environment
+    if: ${{ parameters.env_type === "Dev"} || { parameters.env_type === "QA"} || {
+      parameters.env_type === "Staging"}}
     action: trigger:harness-custom-pipeline
     input:
       url:
-      - Harness Pipeline URL
+      - https://app.harness.io/ng/account/SxuV0ChbRqWGSYClFlMQMQ/all/orgs/default/projects/default_project/pipelines/configureinfrastructurenonProd/pipeline-studio/?storeType=INLINE
+      inputset:
+        env_type: ${{ parameters.env_type }}
+        cloud_type: ${{ parameters.cloud_type }}
+      apikey: ${{ parameters.token }}
+  - id: trigger_prod_environment
+    name: Configure_non_prod_environment
+    if: ${{ parameters.env_type === "Prod"}}
+    action: trigger:harness-custom-pipeline
+    input:
+      url:
+      - https://app.harness.io/ng/account/SxuV0ChbRqWGSYClFlMQMQ/all/orgs/default/projects/default_project/pipelines/configureinfrastructurenonProd/pipeline-studio/?storeType=INLINE
       inputset:
         env_type: ${{ parameters.env_type }}
         cloud_type: ${{ parameters.cloud_type }}
