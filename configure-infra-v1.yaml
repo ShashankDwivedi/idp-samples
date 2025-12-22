@@ -13,6 +13,7 @@ spec:
   - title: Configure Infrastructure V1
     required:
     - env_type
+    - cloud_type
     properties:
       token:
         title: Harness Token
@@ -22,7 +23,7 @@ spec:
       env_type:
         title: Environment Type
         type: string
-        description: Mention the project name
+        description: Choose the environment type from the dropdown
         enum:
         - Dev
         - QA
@@ -33,6 +34,14 @@ spec:
         - Quality
         - Staging
         - Production
+      cloud_type:
+        title: Cloud Provider
+        type: string
+        description: Choose the cloud provider from the drop down
+        enum:
+        - AWS
+        - Azure
+        - GCP
   steps:
   - id: trigger
     name: Creating your appication
@@ -42,4 +51,5 @@ spec:
       - Harness Pipeline URL
       inputset:
         env_type: ${{ parameters.env_type }}
+        cloud_type: ${{ parameters.cloud_type }}
       apikey: ${{ parameters.token }}
