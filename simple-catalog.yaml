@@ -28,5 +28,9 @@ metadata:
     harness.io/pipelines: |
       CD: https://app.harness.io/ng/account/SxuV0ChbRqWGSYClFlMQMQ/all/orgs/default/projects/default_project/pipelines/configure_prod_infra/pipeline-studio/?storeType=INLINE
     backstage.io/techdocs-ref: dir:.
+  links:
+  - url: https://developer.harness.io/
+    title: Harness Developer Documents
+    icon: help
   tags:
   - v1
