@@ -1,0 +1,47 @@
+apiVersion: harness.io/v1
+kind: Workflow
+type: workflow
+identifier: GitHub_Repository_Onboarding
+name: GitHub Repository Onboarding
+owner: group:account/_account_all_users
+spec:
+  output:
+    links:
+    - title: Pipeline Details
+      url: ${{ steps.trigger.output.PipelineUrl }}
+  lifecycle: production
+  parameters:
+  - title: Repository Details
+    required:
+    - orgName
+    - repoName
+    - branchName
+    properties:
+      token:
+        title: Harness Token
+        type: string
+        ui:widget: password
+        ui:field: HarnessAuthToken
+      orgName:
+        title: GitHub Organization (Owner)
+        type: string
+        description: Mention the owner username
+      repoName:
+        title: Repository Name
+        type: string
+        description: Mention the repository name to be created
+      branchName:
+        title: Branch Name
+        type: string
+        description: Mention the branch name to be created
+  steps:
+  - id: trigger
+    name: Creating your new repository
+    action: trigger:harness-custom-pipeline
+    input:
+      url: <PIPELINE-URL>
+      inputset:
+        org_name: ${{ parameters.orgName }}
+        repo_name: ${{ parameters.repoName }}
+        repo_branch_name: ${{ parameters.branchName }}
+      apikey: ${{ parameters.token }}
