@@ -39,7 +39,7 @@ spec:
     name: Creating your new repository
     action: trigger:harness-custom-pipeline
     input:
-      url: <PIPELINE-URL>
+      url: https://app.harness.io/ng/account/SxuV0ChbRqWGSYClFlMQMQ/all/orgs/default/projects/default_project/pipelines/githubrepocreation/pipeline-studio/?storeType=INLINE
       inputset:
         org_name: ${{ parameters.orgName }}
         repo_name: ${{ parameters.repoName }}
