@@ -8,7 +8,7 @@ data "google_client_config" "default" {
 
 locals {
   endpoint = "<where does this come from?>"
-  cluster_ca_certificate        = “test“
+  cluster_ca_certificate        = "test"
 }
 
 provider "kubernetes" {
