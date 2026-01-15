@@ -12,7 +12,7 @@ locals {
 }
 
 provider "kubernetes" {
-  host                   = "https://${local.endpoint}"
+  host                   = "https://test.com"
   token                  = data.google_client_config.default.access_token
   cluster_ca_certificate = local.cluster_ca_certificate
 }
